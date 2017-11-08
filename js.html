@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	<!-- x-ua-compatible 用來指定IE瀏覽器解析編譯
+		而IE=edge指定瀏覽器按照最高的標準模式解析頁面。 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>C->F</title>
+
+
+  </head>
+  <body>
+    <script>
+      var celsius , fahrenhet;
+      celsius = window.prompt("輸入攝氏溫度值");
+	  if(celsius == null || celsius == "")
+	  {
+	    celsius = 0;//避免使用者沒輸入東西
+	  }
+      fahrenhet = transform(celsius);
+     
+      function transform(celsius) 
+	  {		
+        celsius = parseFloat(celsius); //將變數celsius的值以float的形式儲存
+        fahrenhet = celsius * (9 / 5) + 32; 
+        return fahrenhet;
+      } 
+      
+	  document.writeln("<h1>攝氏 " + celsius +" 度為</h1>");
+      document.writeln("<h1>華氏 " + fahrenhet +" 度</h1>");
+      function refresh() 
+	  {
+        location.reload();
+      }
+    </script>
+  <button onclick="refresh()">重新載入</button>
+  </body>
+</html>
